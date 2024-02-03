@@ -20,19 +20,19 @@ const itemSchema = {
 };
 const item = mongoose.model("item", itemSchema);
 
-const item1 = new item({
-  name: "Welcome to Todo List",
-});
+// const item1 = new item({
+//   name: "Welcome to Todo List",
+// });
 
-const item2 = new item({
-  name: "Hit + button to add new Item",
-});
+// const item2 = new item({
+//   name: "Hit + button to add new Item",
+// });
 
-const item3 = new item({
-  name: "<--hit delete to delete an item>",
-});
+// const item3 = new item({
+//   name: "<--hit delete to delete an item>",
+// });
 
-const defaultArray = [item1, item2, item3];
+//const defaultArray = [item1, item2, item3];
 // item.insertMany(defaultArray);
 
 // const items = ["Buy Food", "Cook Food", "Eat Food"];
@@ -41,15 +41,15 @@ let x = [];
 
 // x.push(item1); x.push(item2); x.push(item3);
 
-async function main() {
-  x = await item.find({});
-  x.forEach((obj) => {
+// async function main() {
+//   x = await item.find({});
+//   x.forEach((obj) => {
   //  console.log(obj.name);
-  });
+//  });
  // console.log(x);
-}
+//}
 
-main();
+// main();
 
 
 app.get("/", function (req, res) {
@@ -86,7 +86,7 @@ app.get("/:customeRoute", async function (req, res) {
 
 app.post("/", async function (req, res) {
   const listname = req.body.list;
-  console.log("listName is : ", listname);
+  //console.log("listName is : ", listname);
   const itemt2 = new item({
     name: req.body.newItem,
   });
@@ -149,10 +149,6 @@ app.post("/delete", function (req, res) {
   }
 });
 
-// app.get("/work", function(req,res){
-//   res.render("list", {listTitle: "Work List", newListItems: workItems});
-// });
-
 app.get("/about", function (req, res) {
   res.render("about");
 });
@@ -160,41 +156,3 @@ app.get("/about", function (req, res) {
 app.listen(PORT, function () {
   console.log("Server started on port 3000");
 });
-
-/*
-Junk
- item.save()
-  if (req.body.list === "Work") {
-    workItems.append(item);
-    res.redirect("/work");
-  } else {
-     x.push(item);
-    res.redirect("/");
-  }
-  */
-
-/*
-   if(listName==="Today"){
-   const ack= item.deleteOne({_id:del});
-   //findOneAndDelete
-   console.log(ack);
-     res.redirect("/");
-   }else{
-       list.findOneAndUpdate({name:listName},{$pull:{items:{_id:del}}});
-       res.redirect("/"+listName);
-   } */
-
-/*
-  console.log(req.body.checkbox)
-  async function run(){
-  await 
-  Item.findOneAndDelete(del
-  ,function(err)
-  {
-    if(!err){console.log("sussessfull")}else{console.log("check out for errors")};
-  }
-  )
-  ;}
-  run();
-  res.redirect("/");             
-*/
