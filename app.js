@@ -41,15 +41,15 @@ let x = [];
 
 // x.push(item1); x.push(item2); x.push(item3);
 
-// async function main() {
-//   x = await item.find({});
-//   x.forEach((obj) => {
-  //  console.log(obj.name);
-//  });
- // console.log(x);
-//}
+async function main() {
+  x = await item.find({});
+  x.forEach((obj) => {
+  // console.log(obj.name);
+ });
+ //console.log(x);
+}
 
-// main();
+main();
 
 
 app.get("/", function (req, res) {
